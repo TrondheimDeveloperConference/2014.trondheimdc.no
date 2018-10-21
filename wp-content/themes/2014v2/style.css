@@ -1,0 +1,135 @@
+/*
+Template Name: Trondheim Developer Conference 2014v2
+Author: Eirik Backer
+*/
+
+/* Basics
+-------------------------------------------------------------- */
+*{margin:0;padding:0;border:0;color:inherit;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}p{margin:1em 0}
+html,body{height:100%;cursor:default;font:14px/1.5 "Arimo",sans-serif;background:#fff;color:#104458;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}		
+h1,h2,h6,.menu{font:20px/1 "Roboto Condensed",sans-serif;text-transform:uppercase;letter-spacing:1px;margin:1em 0;-webkit-font-smoothing:subpixel-antialiased}
+h1{font-size:20px!important;width:100%!important}h3,h4{font:700 14px/1.1 "Arimo",sans-serif;margin-bottom:2px}h3{font-size:18px}h6{font-size:11px}
+a,button{transition:.2s;cursor:pointer;text-transform:inherit;text-decoration:underline}
+
+
+/* Framework
+-------------------------------------------------------------- */
+.grid{padding:60px 9% 60px 250px;font-size:0;overflow:hidden;position:relative}
+.grid > *{vertical-align:top;display:inline-block;text-decoration:none;font-size:1rem;padding:20px;width:25%;border:1px solid #dee;border-left:0;margin-bottom:-1px}
+.grid:before,.grid:after{content:'';position:absolute;top:0;height:100%;border-left:1px solid #dee}.grid:after{right:9%}
+.grid > a:hover,.grid > a:focus{background:rgba(16,68,88,.1)}
+
+h6 a{display:inline-block;position:relative;top:0;white-space:nowrap;text-decoration:none;padding:0 13px;margin:2px 5px 2px 42px;font-size:13px;line-height:40px;background:#fff;color:#104458;border-radius:2px;box-shadow:0 3px 0 rgba(0,0,0,.1),inset 0 -3px 0 rgba(0,0,0,.1)}
+h6 a:before{content:'\2192';position:absolute;top:0;right:100%;margin-right:2px;width:40px;text-align:center;background:inherit;border-radius:inherit;box-shadow:inherit}
+h6 a:hover,h6 a:focus,.grid h6 a{background:#57a482;color:#fff}
+h6 a:active{top:2px;box-shadow:0 1px 0 rgba(0,0,0,.4)}
+
+
+/* Modules
+-------------------------------------------------------------- */
+.menu{position:fixed;z-index:4;top:60px;left:40px;list-style:none;margin:0}
+.menu li:first-child a{font-size:0;width:200px;height:65px;background:url(assets/menu.png) no-repeat}
+.menu a:hover,.menu a:focus,.menu a.active{text-indent:7px}
+.menu a{display:block;text-decoration:none}
+
+.pale,.grid-0,.grid-speakers,.grid-utstillere{background:#f2f7f5}.grid-0 h1{display:none}
+.hero{position:relative;z-index:5;padding:100px 0;text-align:center;color:#fff;background:url(assets/hero.jpg) 50% 50%;box-shadow:inset 0 4px 0 rgba(0,0,0,.2)}
+.hero-home{padding:15% 0;margin-top:-1px;background-image:url(assets/hero-home.jpg);background-size:cover}
+.hero img{max-width:80%;height:auto}
+
+.card{font-size:12px;line-height:1.3;padding:15px;padding-right:9px;overflow:hidden;position:relative}
+.card img{float:left;margin:-15px;margin-right:15px;width:95px;height:95px}
+.logo{padding-top:20%;position:relative}
+.logo img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+
+.pops{position:absolute;z-index:99;top:100px;left:0;right:0;margin:3% auto;border-radius:3px;width:95%;padding:30px;max-width:450px;background:#fff;box-shadow:0 0 0 2000px rgba(0,0,0,.7),0 3px 0 rgba(0,0,0,.3),inset 0 -3px 0 rgba(0,0,0,.1);transition:.4s}
+.pops.hide{opacity:0;visibility:hidden;transform:scale(.9);-webkit-transform:scale(.9);-ms-transform:scale(.9)}
+.pops-exit{position:absolute;top:0;right:0;padding:20px;text-decoration:none;font:20px/.5 sans-serif}
+.pops-face{display:block;width:40%;height:auto;margin:auto;border-radius:100%}
+
+
+/* Swiper/timeline
+-------------------------------------------------------------- */
+.swiper-container,.swiper-wrapper,.swiper-slide{float:left;position:relative;overflow:hidden;width:100%;height:100%}
+.swiper-container{transition:.5s;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-user-select:none;-moz-user-select:none;user-select:none}
+.swiper-wrapper{transition:transform 0s ease, left 0s ease, top 0s ease;transform:translate3d(0,0,0);-webkit-transition:-webkit-transform 0s ease, left 0s ease, top 0s ease;-webkit-transform:translate3d(0,0,0);-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
+.swiper-wp8-horizontal{-ms-touch-action:pan-y}
+.swiper-wp8-vertical{-ms-touch-action:pan-x}
+
+.swiper-container{width:100%!important;height:500px;padding:0}
+.swiper-slide{width:480px;border-left:1px solid #dee}
+.swiper-slide:before,.swiper-event:before{content:attr(data-meta);font:11px/1 "Roboto Condensed",sans-serif;float:left;padding:3px;background:#104458;color:#fff;-webkit-font-smoothing:subpixel-antialiased}
+.swiper-event:before{height:50px;margin-right:5px;background:#57a482;box-shadow:0 3px 0 rgba(0,0,0,.1),inset 0 -3px 0 rgba(0,0,0,.1)}
+.swiper-event{position:absolute;z-index:2;margin:30px 10px;width:230px!important;white-space:normal;text-decoration:none;font-size:13px;line-height:1.4}
+.swiper-event:hover,.swiper-event:focus{text-decoration:underline}
+.swiper-pause{position:absolute;z-index:-1;top:0;bottom:0;background:#f2f7f5;width:25px;padding:30px 0;font-weight:700;font-size:13px;text-align:center}
+
+.swiper-scrollbar{position:relative;width:96%;height:5px;margin:2%;padding:0;border-radius:10px;background:rgba(0,0,0,.1);-ms-touch-action:none}
+.swiper-scrollbar-drag{position:relative;height:100%;width:100%;background:rgba(0,0,0,.5);border-radius:10px;cursor:move}
+.swiper-scrollbar-drag:before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;margin:-10px}
+
+.swiper-next,.swiper-prev{position:absolute;right:0;top:142px;width:9%!important;height:122px!important;font:30px/80px sans-serif;text-align:center}
+.swiper-prev{top:263px}
+
+a:hover .star,a:focus .star{opacity:1}
+.star{display:none;position:absolute;top:10px;right:10px;opacity:0;font:30px/1 sans-serif;color:#104458;text-shadow:0 0 10px #fff,0 0 10px #fff,0 0 10px #fff,0 0 10px #fff,0 0 10px #fff}
+.star:hover:before,.star:focus:before,.active .star:before{color:#e93;content:'\2605'}
+.star:before{content:'\2606'}
+
+
+/* Enrollment
+-------------------------------------------------------------- */
+.hero button:hover,.hero button:focus{transform:translateX(3px);-webkit-transform:translateX(3px);-ms-transform:translateX(3px)}
+.enroll{width:90%;max-width:550px;overflow:hidden;font-size:0;border-radius:3px;margin:20px auto;text-align:left;background:#f2f7f5;color:#104458;box-shadow:0 3px 0 rgba(0,0,0,.1),inset 0 -3px 0 rgba(0,0,0,.1)}
+.enroll-message{max-width:550px;margin:auto;padding:20px;font-size:15px;background:rgba(0,0,0,.7);border-radius:10px;text-align:left}
+.enroll input,button{font:inherit;padding:5px;background:url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)}
+.enroll label{position:relative;display:inline-block;width:50%;border:1px solid #ddd;border-left:0;margin-bottom:-1px;font-size:12px}
+.enroll input{position:absolute;top:0;right:0;width:70%;height:100%;font-size:14px;font-weight:400;outline:0}
+.enroll label,.enroll h3,.enroll-del{padding:15px;font-weight:700;line-height:1}
+.enroll-del{float:left;display:none;color:#c66;font-size:12px;margin:3px}
+.enroll-cta{float:right;font-size:16px}
+
+/* WPCF7
+-------------------------------------------------------------- */
+.solo,.solo body{padding:40px 0;height:auto;background:url(assets/hero.jpg) 50% 50% fixed}
+.solo-cont{position:relative;width:90%;max-width:700px;margin:auto;padding:5%;border-radius:3px;background:#f2f7f5;box-shadow:0 3px 0 2px rgba(0,0,0,.3),inset 0 -3px 0 rgba(0,0,0,.1)}
+.solo-cont:before{content:'';position:absolute;top:100%;left:0;padding:60px}
+.solo-cont h2{font:35px/1 "Helvetica","Arial",sans-serif;letter-spacing:0;margin:0;text-transform:none}
+.solo-cont blockquote{font-size:20px;line-height:1.2}
+
+.wpcf7-form span.wpcf7-not-valid-tip,.wpcf7-form br{display:none}
+.wpcf7-form div.wpcf7-response-output{padding:10px 20px;color:#333;text-transform:none;font-size:1.2em}
+.wpcf7-form div.wpcf7-mail-sent-ok{border:1px solid #2bb4c7;background:#e0eef2}
+.wpcf7-form div.wpcf7-mail-sent-ng{border:1px solid #f33;background:#ecc1c1}
+.wpcf7-form div.wpcf7-spam-blocked{border:1px solid #f60;background:#e4c0a7}
+.wpcf7-form div.wpcf7-validation-errors{border:1px solid #f7e700;background:#ffc}
+.wpcf7 .wpcf7-form-control-wrap .wpcf7-not-valid{border-color:#743838;background:#f9eded}
+.wpcf7 .wpcf7-form-control-wrap .watermark{color:#999}
+
+.wpcf7-form p{clear:both;overflow:hidden;font-size:13px;font-weight:700;line-height:30px;margin:2em 0}
+.wpcf7-form-control-wrap{display:block;overflow:hidden;margin:-30px 0 20px 0;border-bottom:1px solid #ddd;font-size:16px;font-weight:400}
+.wpcf7-form-control{font:inherit;float:right;width:80%;background:url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)}
+.wpcf7-textarea{resize:none;line-height:1.6;padding:5px}
+.wpcf7-submit,.button{font:16px/1.6 "Roboto Condensed",sans-serif;border:0;padding:15px;margin-top:20px}
+.wpcf7-submit,.button{text-transform:uppercase;background:#1f8454;color:#fff;border-radius:2px;transition:.2s}
+.wpcf7-submit:hover,.wpcf7-submit:focus,.button:hover,.button:focus{background:#165c3a;color:#fff}
+
+
+/* Responsive
+-------------------------------------------------------------- */
+@media(max-width:1200px){.grid > *{width:50%}}
+@media(max-width:750px){
+	h6 a{width:200px;margin-right:0;transform:none;-webkit-transform:none;-ms-transform:none}
+	h1{font-size:15px!important;padding:9px!important}
+
+	.grid{padding:20px 0}.grid > *,.enroll label{width:100%}.grid:before,.grid:after{display:none}
+	.menu{top:0;left:0;width:100%;background:#fff;box-shadow:0 3px 0 rgba(0,0,0,.05);padding:9px;display:none}
+	.menu:before{content:'';float:right;width:18px;height:2px;border:double;border-width:6px 0;margin:3px}
+	.menu li:first-child a{width:45px;height:20px;background-size:auto 20px}
+	.menu a{height:0;overflow:hidden}
+
+	.logo{width:50%}
+	.logo img{transform:translate(-50%,-50%) scale(.7);-webkit-transform:translate(-50%,-50%) scale(.7);-ms-transform:translate(-50%,-50%) scale(.7)}
+	.swiper-next,.swiper-prev{display:none}
+	.swiper-container{height:380px}
+}
